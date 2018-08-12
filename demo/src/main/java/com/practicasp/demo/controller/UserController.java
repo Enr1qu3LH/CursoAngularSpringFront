@@ -1,6 +1,7 @@
 package com.practicasp.demo.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.practicasp.demo.modelo.Users;
 import com.practicasp.demo.services.UserService;
+import com.praticasp.demo.utils.QueryResult;
 import com.praticasp.demo.utils.RestResponse;
 
 import antlr.StringUtils;
@@ -41,6 +43,13 @@ public class UserController {
 		this.userService.save(user);
 		return new RestResponse(HttpStatus.OK.value(),"Operación éxitosa");
 		
+	}
+	
+	//URL con la cual se va a enviar de tipo POST la cual guaradara la BD.
+		@RequestMapping(value = "/getUsers", method = RequestMethod.GET) 
+	public List<Users> getUsers() {
+			
+			return this.userService.findAll();
 	}
 	
 	private boolean validate(Users user) {
