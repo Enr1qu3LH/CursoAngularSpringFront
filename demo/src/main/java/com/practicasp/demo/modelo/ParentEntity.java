@@ -14,9 +14,6 @@ import javax.persistence.MappedSuperclass;
 @Access(AccessType.FIELD)
 public class ParentEntity implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -4642881392201064811L;
 
 	@javax.persistence.Id

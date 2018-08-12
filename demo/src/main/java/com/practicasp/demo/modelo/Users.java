@@ -6,14 +6,15 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "tblusers")
 @Access(AccessType.FIELD)
-public class Users extends ParentEntity{
+@Data public class Users extends ParentEntity{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 522437908196700730L;
 	
 	@Column(name="nombre1", nullable=false, length=20)
@@ -33,43 +34,53 @@ public class Users extends ParentEntity{
 	
 	@Column(name="direccion", nullable=false, length=50)
 	private String direccion;
-	
+
 	public String getNombre1() {
 		return nombre1;
 	}
+
 	public void setNombre1(String nombre1) {
 		this.nombre1 = nombre1;
 	}
+
 	public String getNombre2() {
 		return nombre2;
 	}
+
 	public void setNombre2(String nombre2) {
 		this.nombre2 = nombre2;
 	}
+
 	public String getAppaterno() {
 		return appaterno;
 	}
-	public void setAppaterno(String ap_paterno) {
-		this.appaterno = ap_paterno;
+
+	public void setAppaterno(String appaterno) {
+		this.appaterno = appaterno;
 	}
+
 	public String getApmaterno() {
 		return apmaterno;
 	}
-	public void setApmaterno(String ap_materno) {
-		this.apmaterno = ap_materno;
+
+	public void setApmaterno(String apmaterno) {
+		this.apmaterno = apmaterno;
 	}
+
 	public String getTelefono() {
 		return telefono;
 	}
+
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
+	
 	public String getDireccion() {
 		return direccion;
 	}
+
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
-
 	
 }
